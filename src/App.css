@@ -1,38 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #161c32;
   min-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+}
+
+.app_sidebar {
+  background-color: #283046;
+  min-width: 16vw;
+  height: 80vh;
+}
+
+.sidebar {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.8rem;
+}
+
+.sidebar_title {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.image_wow {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.image_wow h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #3b58c0ac;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.target {
+  color: #3b58c0ac;
+}
+
+.globe {
+  font-size: x-large;
+  color: #ffffff;
+}
+
+.sidebar_options {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  padding: 2px 5px;
+}
+.sidebar_options h4 {
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+}
+.sidebar_icons {
+  color: #ffffff;
+}
+
+.dashboard {
+  background-color: #3b58c0ac;
+  border-radius: 5px;
+}
+
+.app_stats_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 0.7rem 0.5rem;
+  min-width: 81vw;
+}
+
+.stats {
+  min-height: 20vh;
+  width: 100%;
+  background-color: #283046;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+  padding: 0 2rem;
+}
+
+.stat {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.stat_icon {
+  background-color: white;
+}
+
+.stat_details h3 {
+  color: #ffffff;
+}
+.stat_details p {
+  color: #ffffff;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+}
+
+.list {
+  width: 100%;
+  min-height: 62vh;
+  background-color: #283046;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0.5rem;
+}
+
+.list_title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.show_entries {
+  display: flex;
+  gap: 1rem;
+}
+.show_entries p {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+.list_header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  background-color: #271c1c;
+  padding: 0.3rem;
+  border: 1px solid #707070;
+  margin-bottom: 0.2rem;
+}
+
+.list_header p {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+
+  letter-spacing: 0.1px;
+  font-weight: 300;
+}
+
+.list_item {
+  display: flex;
+  flex-direction: column;
+}
+.item_details {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+}
+
+.item_details p {
+  color: #ffffff;
+}
+
+.list_icon {
+  color: #ffffff;
+  margin-right: 0.5rem;
+}
+
+.underline {
+  height: 1px;
+  width: 100%;
+  background-color: #707070;
+}
+
+.text {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: x-small;
+  font-weight: 100;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  font-size: 1.2rem;
+  gap: 0.8rem;
+  background-color: #161c32;
+  padding-top: 0.3rem;
+  padding-right: 0.5rem;
+}
+
+.pagination .page-num {
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #161c32;
+  color: #ffffff;
+}
+
+.pagination .active {
+  color: #3b58c0ac;
+  font-size: 1.5rem;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 900px) {
+  .stat {
+    font-size: x-small;
   }
-  to {
-    transform: rotate(360deg);
+
+  .list_header p {
+    font-size: 0.8rem;
+    letter-spacing: 0px;
+  }
+
+  .App {
+    flex-direction: column;
+  }
+  .sidebar_options_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .app_sidebar {
+    max-height: 30vh;
   }
 }
